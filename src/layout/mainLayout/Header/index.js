@@ -1,12 +1,13 @@
-import React from 'react'
-import './style.css'
+import React from "react";
+import "./style.css";
+import { Box, Typography } from "@mui/material";
 
 const Header = () => {
   return (
-    <div>
-      <h2>Header</h2>
-    </div>
-  )
-}
+    <Box sx={{background:'#191d3a',px:2,py:1 }}>
+      <Typography sx={{fontWeight:'bold',fontSize:25,color:'white'}} variant="h6">Aldar Form</Typography>
+    </Box>
+  );
+};
 
-export default Header
+export default Header;
