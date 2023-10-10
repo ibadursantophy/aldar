@@ -7,6 +7,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import EditableTable from "./Table";
+import OtherTarget from "./OtherTarget";
 export default function FocusArea() {
   const liveOptions = [
     "Access to quality education, this includes courses, programs, and scholarship.",
@@ -36,6 +37,40 @@ export default function FocusArea() {
     },
     {
       text: "Upgraded homes for underprivileged families.",
+      monthImpact: "Bob",
+      totalImpact: 35,
+    },
+  ];
+  const belongData = [
+    {
+      text: "Accessible opportunities provided for, PoD",
+      monthImpact: "John",
+      totalImpact: 30,
+    },
+    {
+      text: "Blue-collar workers impacted by community development initiatives that enhance their overall quality of life.",
+      monthImpact: "Jane",
+      totalImpact: 28,
+    },
+    {
+      text: "Response-based relief campaigns for vulnerable groups.",
+      monthImpact: "Bob",
+      totalImpact: 35,
+    },
+  ];
+  const sustainData = [
+    {
+      text: "Local entrepreneurs funded / contracted through the CSR department.",
+      monthImpact: "John",
+      totalImpact: 30,
+    },
+    {
+      text: "Social enterprise partners or beneficiaries, through partnerships and collaborations.",
+      monthImpact: "Jane",
+      totalImpact: 28,
+    },
+    {
+      text: "Research published with Aldar, by universities or companies we’re working with.",
       monthImpact: "Bob",
       totalImpact: 35,
     },
@@ -91,9 +126,9 @@ export default function FocusArea() {
             return <FormControlLabel control={<Checkbox />} label={item} />;
           })}
         </FormGroup>
-        <EditableTable data={liveData} />
-        <EditableTable data={liveData} />
-        <EditableTable data={liveData} />
+        <EditableTable table={'LIVE'} data={liveData} />
+        <EditableTable table={'BELONG'} data={belongData} />
+        <EditableTable table={'SUSTAIN'} data={sustainData} />
       </Stack>
     </Stack>
   );
