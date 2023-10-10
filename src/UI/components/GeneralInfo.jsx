@@ -106,6 +106,7 @@ export function GeneralInfo() {
             size="small"
             id="outlined-basic"
             label="Email Address"
+            type="email"
             variant="outlined"
             fullWidth
           />
@@ -113,6 +114,7 @@ export function GeneralInfo() {
             size="small"
             id="outlined-basic"
             label="Email Address"
+            type="email"
             variant="outlined"
             fullWidth
           />
@@ -122,6 +124,7 @@ export function GeneralInfo() {
             size="small"
             id="outlined-basic"
             label="Mobile Number"
+            type="number"
             variant="outlined"
             fullWidth
           />
@@ -129,6 +132,7 @@ export function GeneralInfo() {
             size="small"
             id="outlined-basic"
             label="Mobile Number"
+            type="number"
             variant="outlined"
             fullWidth
           />

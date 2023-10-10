@@ -47,7 +47,7 @@ const OtherForm = () => {
             label="I hereby confirm that the information provided is accurate and up to date as per my knowledge. I commit to delivering the promised impact and delivering reports within the expected timeframe."
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item sx={{display:'flex',justifyContent:'flex-end'}} xs={12}>
           <ButtonAtom variant="contained" color="primary">
             Submit
           </ButtonAtom>

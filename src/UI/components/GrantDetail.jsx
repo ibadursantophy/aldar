@@ -56,11 +56,13 @@ export function GrantDetail() {
         <TextInputAtom label="Classification" variant="outlined" size="small" />
         <TextInputAtom
           label="Requested Budget"
+          type="number"
           variant="outlined"
           size="small"
         />
         <TextInputAtom
           label="Total Project Cost"
+          type="number"
           variant="outlined"
           size="small"
         />

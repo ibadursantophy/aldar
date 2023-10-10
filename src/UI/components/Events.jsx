@@ -8,10 +8,12 @@ import {
   TableRow,
   Paper,
   Stack,
+  TextField,
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import AddIcon from "@mui/icons-material/Add";
 import { ButtonAtom, TextInputAtom } from "../atoms";
+import { DatePicker, TimePicker } from "@mui/x-date-pickers";
 
 const EventsTable = () => {
   const [tableData, setTableData] = useState([
@@ -77,21 +79,15 @@ const EventsTable = () => {
             {tableData.map((row, index) => (
               <TableRow key={index}>
                 <TableCell>
-                  <TextInputAtom
+                  <DatePicker
                     size={"small"}
-                    value={row.date}
-                    onChange={(e) =>
-                      handleRowChange(index, "date", e.target.value)
-                    }
+                    slotProps={{ textField: { size: "small" } }}
                   />
                 </TableCell>
                 <TableCell>
-                  <TextInputAtom
-                    size={"small"}
-                    value={row.time}
-                    onChange={(e) =>
-                      handleRowChange(index, "time", e.target.value)
-                    }
+                  <TimePicker
+                    slotProps={{ textField: { size: "small" } }}
+                    label="Time"
                   />
                 </TableCell>
                 <TableCell>

@@ -99,17 +99,22 @@ const BudgetBreakDown = () => {
                   <TextInputAtom
                     size={"small"}
                     value={row.location}
+                    type={'number'}
                     onChange={(e) =>
                       handleRowChange(index, "location", e.target.value)
                     }
                   />
                 </TableCell>
                 <TableCell>
-                  <TextInputAtom size={"small"} />
+                  <TextInputAtom 
+                  type={'number'}
+                  size={"small"} 
+                  />
                 </TableCell>
                 <TableCell>
                   <TextInputAtom
                     size={"small"}
+                    type={'number'}
                     value={row.objectives}
                     onChange={(e) =>
                       handleRowChange(index, "objectives", e.target.value)

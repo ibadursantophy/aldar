@@ -67,10 +67,10 @@ const EditableTable = ({ table, data }) => {
                 <TableCell>{row.text}</TableCell>
               )}
               <TableCell>
-                <TextInputAtom size={"small"} name="name" />
+                <TextInputAtom type={"number"} size={"small"} name="name" />
               </TableCell>
               <TableCell>
-                <TextInputAtom size={"small"} name="age" />
+                <TextInputAtom type={"number"} size={"small"} name="age" />
               </TableCell>
             </TableRow>
           ))}
