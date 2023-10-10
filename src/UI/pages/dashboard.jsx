@@ -1,10 +1,33 @@
-import { Box, Stack, TextField, Typography, lighten } from "@mui/material";
-import { FormControlLabel, Checkbox, FormGroup } from "@mui/material";
+import { Stack, Typography, lighten } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import React from "react";
 import PortraitRoundedIcon from "@mui/icons-material/PortraitRounded";
+import TextInputAtom from "../../components/TextInputAtom/TextInputAtom";
+import { CheckboxGroupAtom } from "../../components/CheckBoxGroupAtom/CheckBoxGroupAtom";
 
 export const Dashboard = () => {
+  const checkboxOptions = [
+    { label: "One Off" },
+    { label: "Weekly" },
+    { label: "Monthly" },
+    { label: "Quarterly" },
+    { label: "Semi-Annual" },
+    { label: "Annual" },
+  ];
+
+  const TimeframeOption = [
+    { label: "6-12 weeks" },
+    { label: "6-12 months" },
+    { label: "1-3 years" },
+    { label: "+4 years" },
+  ];
+
+  const focusAreaOptions = [
+    { label: "Live" },
+    { label: "Belong" },
+    { label: "Sustain" },
+  ];
+
   return (
     <Stack direction={"row"} spacing={2} px={2} py={4}>
       <Stack
@@ -35,13 +58,13 @@ export const Dashboard = () => {
           </Typography>
         </Stack>
         <Stack pt={2} spacing={1}>
-          <TextField
+          <TextInputAtom
             size="small"
             id="outlined-basic"
             label="Full Name"
             variant="outlined"
           />
-          <TextField
+          <TextInputAtom
             id="outlined-multiline-flexible"
             label="Address"
             multiline
@@ -57,14 +80,14 @@ export const Dashboard = () => {
             </Typography>
           </Stack>
           <Stack spacing={1} direction={"row"}>
-            <TextField
+            <TextInputAtom
               size="small"
               id="outlined-basic"
               label="Contact Person"
               variant="outlined"
               fullWidth
             />
-            <TextField
+            <TextInputAtom
               size="small"
               id="outlined-basic"
               label="Contact Person"
@@ -73,14 +96,14 @@ export const Dashboard = () => {
             />
           </Stack>
           <Stack spacing={1} direction={"row"}>
-            <TextField
+            <TextInputAtom
               size="small"
               id="outlined-basic"
               label="Title"
               variant="outlined"
               fullWidth
             />
-            <TextField
+            <TextInputAtom
               size="small"
               id="outlined-basic"
               label="Title"
@@ -89,14 +112,14 @@ export const Dashboard = () => {
             />
           </Stack>
           <Stack spacing={1} direction={"row"}>
-            <TextField
+            <TextInputAtom
               size="small"
               id="outlined-basic"
               label="Email Address"
               variant="outlined"
               fullWidth
             />
-            <TextField
+            <TextInputAtom
               size="small"
               id="outlined-basic"
               label="Email Address"
@@ -105,14 +128,14 @@ export const Dashboard = () => {
             />
           </Stack>
           <Stack spacing={1} direction={"row"}>
-            <TextField
+            <TextInputAtom
               size="small"
               id="outlined-basic"
               label="Mobile Number"
               variant="outlined"
               fullWidth
             />
-            <TextField
+            <TextInputAtom
               size="small"
               id="outlined-basic"
               label="Mobile Number"
@@ -150,66 +173,40 @@ export const Dashboard = () => {
           </Typography>
         </Stack>
         <Stack pt={2} spacing={1}>
-          <TextField label="Project Name" variant="outlined" size="small" />
-          <TextField
+          <TextInputAtom label="Project Name" variant="outlined" size="small" />
+          <TextInputAtom
             label="Project Brief"
             multiline
             rows={4}
             variant="outlined"
             size="small"
           />
-          <FormGroup
-            sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
-          >
-            <label>Project Timeframe: </label>
-            <FormControlLabel
-              sx={{ ml: 1 }}
-              control={<Checkbox />}
-              label="6-12 weeks"
-            />
-            <FormControlLabel control={<Checkbox />} label="6-12 months" />
-            <FormControlLabel control={<Checkbox />} label="1-3 years" />
-            <FormControlLabel control={<Checkbox />} label="+4 years" />
-          </FormGroup>
-          <FormGroup
-            sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
-          >
-            <Box sx={{width:'20%'}}>
-              <label>Frequency: </label>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                flexWrap:'wrap',
-                width:'80%'
-              }}
-            >
-              <FormControlLabel
-                control={<Checkbox />}
-                label="One Off"
-              />
-              <FormControlLabel control={<Checkbox />} label="Weekly" />
-              <FormControlLabel control={<Checkbox />} label="Monthly" />
-              <FormControlLabel control={<Checkbox />} label="Quarterly" />
-              <FormControlLabel control={<Checkbox />} label="Semi-Annual" />
-              <FormControlLabel control={<Checkbox />} label="Annual" />
-            </Box>
-          </FormGroup>
-          <TextField label="Classification" variant="outlined" size="small" />
-          <TextField label="Requested Budget" variant="outlined" size="small" />
-          <TextField
+          <CheckboxGroupAtom
+            label="Project Timeframe"
+            options={TimeframeOption}
+          />
+          <CheckboxGroupAtom label="Frequency" options={checkboxOptions} />
+
+          <TextInputAtom
+            label="Classification"
+            variant="outlined"
+            size="small"
+          />
+          <TextInputAtom
+            label="Requested Budget"
+            variant="outlined"
+            size="small"
+          />
+          <TextInputAtom
             label="Total Project Cost"
             variant="outlined"
             size="small"
           />
-          <FormGroup sx={{ display: "flex",alignItems:'center', flexDirection: "row" }}>
-            <label>Focus Areas Applicable:</label>
-            <FormControlLabel sx={{ml:1}} control={<Checkbox />} label="Live" />
-            <FormControlLabel control={<Checkbox />} label="Belong" />
-            <FormControlLabel control={<Checkbox />} label="Sustain" />
-          </FormGroup>
+          {/********************************************************** */}
+          <CheckboxGroupAtom
+            label="Focus Areas Applicable"
+            options={focusAreaOptions}
+          />
         </Stack>
       </Stack>
     </Stack>

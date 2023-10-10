@@ -7,7 +7,11 @@ import TextInputAtom from "./components/TextInputAtom/TextInputAtom";
 import { Routes } from "./routes";
 
 function App() {
-  return <div className="App" style={{ marginTop: 10 }}></div>;
+  return (
+    <div className="App" style={{ marginTop: 10 }}>
+      <Routes />
+    </div>
+  );
 }
 
 export default App;
