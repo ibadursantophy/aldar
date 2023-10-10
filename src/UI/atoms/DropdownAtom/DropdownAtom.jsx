@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-function DropdownAtom({
+export function DropdownAtom({
   labelId,
   id,
   value,
@@ -43,4 +43,3 @@ function DropdownAtom({
   );
 }
 
-export default DropdownAtom;

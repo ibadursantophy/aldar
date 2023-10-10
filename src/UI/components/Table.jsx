@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import AddIcon from "@mui/icons-material/Add";
-import { AutocompleteAtom } from "./AutoComplectAtom/AutoComplectAtom";
+import { AutocompleteAtom } from "../atoms/AutoComplectAtom/AutoComplectAtom";
 
 const EditableTable = ({ table, data }) => {
   const [tableData, setTableData] = useState(data);
@@ -99,7 +99,7 @@ const EditableTable = ({ table, data }) => {
             <TableRow key={row.id}>
               {row?.edit ? (
                 <TableCell>
-                  <AutocompleteAtom size={'small'} label={'Target'} options={targetOption.map((item)=>item.title)} />
+                  <AutocompleteAtom size={'small'} label={'Other Target'} options={targetOption.map((item)=>item.title)} />
                 </TableCell>
               ) : (
                 <TableCell>{row.text}</TableCell>

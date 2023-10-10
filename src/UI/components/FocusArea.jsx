@@ -1,7 +1,6 @@
 import { Stack } from "@mui/material";
 import React from "react";
 import EditableTable from "./Table";
-import { CheckboxGroupAtom } from "./CheckBoxGroupAtom/CheckBoxGroupAtom";
 import {
   FocusAreaOption,
   belongData,
@@ -11,7 +10,9 @@ import {
   sustainData,
   sustainOptions,
 } from "../../utils/constants/staticData";
-import ProblemGroupAtom from "./ProblemGroupAtom/ProblemGroupAtom";
+import EventsTable from "./Events";
+import BudgetBreakDown from "./BudgetBreakdown";
+import { CheckBoxGroupAtom, ProblemGroupAtom } from "../atoms";
 export default function FocusArea() {
   return (
     <Stack direction={"row"} spacing={2} px={2}>
@@ -24,7 +25,7 @@ export default function FocusArea() {
         py={4}
         spacing={1}
       >
-        <CheckboxGroupAtom
+        <CheckBoxGroupAtom
           label="Focus Areas Applicable"
           options={FocusAreaOption}
         />
@@ -36,6 +37,8 @@ export default function FocusArea() {
         <EditableTable table={"LIVE"} data={liveData} />
         <EditableTable table={"BELONG"} data={belongData} />
         <EditableTable table={"SUSTAIN"} data={sustainData} />
+        <EventsTable />
+        <BudgetBreakDown />
       </Stack>
     </Stack>
   );

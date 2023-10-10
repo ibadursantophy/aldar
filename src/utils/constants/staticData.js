@@ -72,3 +72,19 @@ export const sustainData = [
     totalImpact: 35,
   },
 ];
+
+export const frequencyOptions = [
+  { label: "One Off" },
+  { label: "Weekly" },
+  { label: "Monthly" },
+  { label: "Quarterly" },
+  { label: "Semi-Annual" },
+  { label: "Annual" },
+];
+
+export const TimeframeOption = [
+  { label: "6-12 weeks" },
+  { label: "6-12 months" },
+  { label: "1-3 years" },
+  { label: "+4 years" },
+];

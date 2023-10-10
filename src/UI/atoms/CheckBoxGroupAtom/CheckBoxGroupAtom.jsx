@@ -4,12 +4,12 @@ import Box from '@mui/material/Box';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox'; // Import the Checkbox component from your library
 
-export const CheckboxGroupAtom=({ label, options }) =>{
+export const CheckBoxGroupAtom=({ label, options }) =>{
   return (
     <FormGroup
       sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}
     >
-      <Box sx={{ width: '20%' }}>
+      <Box sx={{ width: '30%' }}>
         <label>{label}: </label>
       </Box>
       <Box
@@ -18,7 +18,7 @@ export const CheckboxGroupAtom=({ label, options }) =>{
           flexDirection: 'row',
           alignItems: 'center',
           flexWrap: 'wrap',
-          width: '80%',
+          width: '70%',
         }}
       >
         {options.map((option, index) => (
