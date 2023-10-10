@@ -3,11 +3,14 @@ import {
   Checkbox,
   FormControlLabel,
   FormGroup,
+  InputLabel,
   Stack,
 } from "@mui/material";
 import React from "react";
 import EditableTable from "./Table";
-import OtherTarget from "./OtherTarget";
+import EventsTable from "./Events";
+import BudgetBreakDown from "./BudgetBreakdown";
+import OtherForm from "./OtherForm";
 export default function FocusArea() {
   const liveOptions = [
     "Access to quality education, this includes courses, programs, and scholarship.",
@@ -126,9 +129,16 @@ export default function FocusArea() {
             return <FormControlLabel control={<Checkbox />} label={item} />;
           })}
         </FormGroup>
-        <EditableTable table={'LIVE'} data={liveData} />
-        <EditableTable table={'BELONG'} data={belongData} />
-        <EditableTable table={'SUSTAIN'} data={sustainData} />
+        <EditableTable table={"LIVE"} data={liveData} />
+        <EditableTable table={"BELONG"} data={belongData} />
+        <EditableTable table={"SUSTAIN"} data={sustainData} />
+        <label style={{ marginTop: 40 }}>
+          EVENTS - the information here does not have to be accurate, however,
+          an estimation or an initial plan is needed.
+        </label>
+        <EventsTable />
+        <label style={{ marginTop: 40 }}>BUDGET BREAKDOWN</label>
+        <BudgetBreakDown />
       </Stack>
     </Stack>
   );

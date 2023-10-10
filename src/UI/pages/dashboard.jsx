@@ -1,10 +1,12 @@
-import { Stack, Typography, lighten } from "@mui/material";
+import { InputLabel, Stack, Typography, lighten } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import React from "react";
 import PortraitRoundedIcon from "@mui/icons-material/PortraitRounded";
 import FocusArea from "../components/FocusArea";
 import TextInputAtom from "../components/TextInputAtom/TextInputAtom";
 import { CheckboxGroupAtom } from "../components/CheckBoxGroupAtom/CheckBoxGroupAtom";
+import EventsTable from "../components/Events";
+import OtherForm from "../components/OtherForm";
 
 export const Dashboard = () => {
   const checkboxOptions = [
@@ -214,7 +216,11 @@ export const Dashboard = () => {
           </Stack>
         </Stack>
       </Stack>
+
       <FocusArea />
+      <Stack  px={2} py={4}>
+        <OtherForm />
+      </Stack>
     </Stack>
   );
 };
