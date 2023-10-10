@@ -8,12 +8,12 @@ import {
   TableRow,
   Paper,
   TextField,
-  Button,
   Stack,
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import AddIcon from "@mui/icons-material/Add";
 import { AutocompleteAtom } from "./AutoComplectAtom/AutoComplectAtom";
+import ButtonAtom from "./ButtonAtom/ButtonAtom";
 
 const EditableTable = ({ table, data }) => {
   const [tableData, setTableData] = useState(data);
@@ -83,13 +83,13 @@ const EditableTable = ({ table, data }) => {
                 alignItems={"center"}
               >
                 Total impact #
-                <Button
+                <ButtonAtom
                   variant="contained"
                   color="primary"
                   onClick={handleAddRow}
                 >
                   <AddIcon />
-                </Button>
+                </ButtonAtom>
               </Stack>
             </TableCell>
           </TableRow>

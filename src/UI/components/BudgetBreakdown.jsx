@@ -7,12 +7,12 @@ import {
   TableHead,
   TableRow,
   Paper,
-  TextField,
-  Button,
   Stack,
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import AddIcon from "@mui/icons-material/Add";
+import TextInputAtom from "./TextInputAtom/TextInputAtom";
+import ButtonAtom from "./ButtonAtom/ButtonAtom";
 
 const BudgetBreakDown = () => {
   const [tableData, setTableData] = useState([
@@ -64,9 +64,13 @@ const BudgetBreakDown = () => {
                 alignItems={"center"}
               >
                 Covered by Aldar
-                <Button variant="contained" color="primary" onClick={addRow}>
+                <ButtonAtom
+                  variant="contained"
+                  color="primary"
+                  onClick={addRow}
+                >
                   <AddIcon />
-                </Button>
+                </ButtonAtom>
               </Stack>
             </TableCell>
           </TableRow>
@@ -75,7 +79,7 @@ const BudgetBreakDown = () => {
           {tableData.map((row, index) => (
             <TableRow key={index}>
               <TableCell>
-                <TextField
+                <TextInputAtom
                   size={"small"}
                   value={row.date}
                   onChange={(e) =>
@@ -84,7 +88,7 @@ const BudgetBreakDown = () => {
                 />
               </TableCell>
               <TableCell>
-                <TextField
+                <TextInputAtom
                   size={"small"}
                   value={row.time}
                   onChange={(e) =>
@@ -93,7 +97,7 @@ const BudgetBreakDown = () => {
                 />
               </TableCell>
               <TableCell>
-                <TextField
+                <TextInputAtom
                   size={"small"}
                   value={row.location}
                   onChange={(e) =>
@@ -102,10 +106,10 @@ const BudgetBreakDown = () => {
                 />
               </TableCell>
               <TableCell>
-                <TextField size={"small"} />
+                <TextInputAtom size={"small"} />
               </TableCell>
               <TableCell>
-                <TextField
+                <TextInputAtom
                   size={"small"}
                   value={row.objectives}
                   onChange={(e) =>
@@ -114,10 +118,10 @@ const BudgetBreakDown = () => {
                 />
               </TableCell>
               <TableCell>
-                <TextField size={"small"} />
+                <TextInputAtom size={"small"} />
               </TableCell>
               <TableCell>
-                <TextField size={"small"} />
+                <TextInputAtom size={"small"} />
               </TableCell>
             </TableRow>
           ))}

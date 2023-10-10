@@ -1,17 +1,8 @@
 import React from "react";
-import {
-  Grid,
-  Paper,
-  Typography,
-  TextField,
-  RadioGroup,
-  Radio,
-  FormControlLabel,
-  FormControl,
-  FormLabel,
-  Checkbox,
-  Button,
-} from "@mui/material";
+import { Grid, Paper, Typography, FormControlLabel } from "@mui/material";
+import TextInputAtom from "./TextInputAtom/TextInputAtom";
+import ButtonAtom from "./ButtonAtom/ButtonAtom";
+import CheckBoxAtom from "./CheckBoxAtom/CheckBoxAtom";
 
 const OtherForm = () => {
   return (
@@ -21,7 +12,7 @@ const OtherForm = () => {
       </Typography>
       <Grid container spacing={2}>
         <Grid item xs={6}>
-          <TextField
+          <TextInputAtom
             size="small"
             fullWidth
             label="Have this entity previously received funding or sponsorship from Aldar?"
@@ -30,7 +21,7 @@ const OtherForm = () => {
           />
         </Grid>
         <Grid item xs={6}>
-          <TextField
+          <TextInputAtom
             size="small"
             fullWidth
             label="Is this the first cycle of this initiative?"
@@ -39,7 +30,7 @@ const OtherForm = () => {
           />
         </Grid>
         <Grid item xs={12}>
-          <TextField
+          <TextInputAtom
             size="small"
             fullWidth
             label="Has there been similar impact project delivered before? (If yes, attach report or portfolio for reference)"
@@ -49,14 +40,14 @@ const OtherForm = () => {
         </Grid>
         <Grid item xs={12}>
           <FormControlLabel
-            control={<Checkbox name="confirm" color="primary" />}
+            control={<CheckBoxAtom name="confirm" color="primary" />}
             label="I hereby confirm that the information provided is accurate and up to date as per my knowledge. I commit to delivering the promised impact and delivering reports within the expected timeframe."
           />
         </Grid>
         <Grid item xs={12}>
-          <Button variant="contained" color="primary">
+          <ButtonAtom variant="contained" color="primary">
             Submit
-          </Button>
+          </ButtonAtom>
         </Grid>
       </Grid>
     </Paper>

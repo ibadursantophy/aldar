@@ -3,14 +3,12 @@ import {
   Checkbox,
   FormControlLabel,
   FormGroup,
-  InputLabel,
   Stack,
 } from "@mui/material";
 import React from "react";
 import EditableTable from "./Table";
 import EventsTable from "./Events";
 import BudgetBreakDown from "./BudgetBreakdown";
-import OtherForm from "./OtherForm";
 export default function FocusArea() {
   const liveOptions = [
     "Access to quality education, this includes courses, programs, and scholarship.",
