@@ -1,214 +1,250 @@
-import { Stack, Typography, lighten } from "@mui/material";
+import {
+  Box,
+  Checkbox,
+  FormControlLabel,
+  FormGroup,
+  Stack,
+  TextField,
+  Typography,
+  lighten,
+} from "@mui/material";
 import { grey } from "@mui/material/colors";
 import React from "react";
 import PortraitRoundedIcon from "@mui/icons-material/PortraitRounded";
-import TextInputAtom from "../../components/TextInputAtom/TextInputAtom";
-import { CheckboxGroupAtom } from "../../components/CheckBoxGroupAtom/CheckBoxGroupAtom";
+import FocusArea from "../components/FocusArea";
 
 export const Dashboard = () => {
-  const checkboxOptions = [
-    { label: "One Off" },
-    { label: "Weekly" },
-    { label: "Monthly" },
-    { label: "Quarterly" },
-    { label: "Semi-Annual" },
-    { label: "Annual" },
-  ];
-
-  const TimeframeOption = [
-    { label: "6-12 weeks" },
-    { label: "6-12 months" },
-    { label: "1-3 years" },
-    { label: "+4 years" },
-  ];
-
-  const focusAreaOptions = [
-    { label: "Live" },
-    { label: "Belong" },
-    { label: "Sustain" },
-  ];
-
   return (
-    <Stack direction={"row"} spacing={2} px={2} py={4}>
-      <Stack
-        sx={{
-          width: "50%",
-          background: "white",
-          px: 2,
-          py: 1.5,
-          borderRadius: 1,
-        }}
-      >
-        <Stack spacing={1} direction={"row"} alignItems={"center"}>
-          <Stack
-            sx={{
-              p: 0.4,
-              borderRadius: 0.6,
-              background: (theme) => lighten(theme.palette.primary.main, 0.8),
-            }}
-          >
-            <PortraitRoundedIcon color={"primary"} />
+    <Stack>
+      <Stack direction={"row"} spacing={2} px={2} py={4}>
+        <Stack
+          sx={{
+            width: "50%",
+            background: "white",
+            px: 2,
+            py: 1.5,
+            borderRadius: 1,
+          }}
+        >
+          <Stack spacing={1} direction={"row"} alignItems={"center"}>
+            <Stack
+              sx={{
+                p: 0.4,
+                borderRadius: 0.6,
+                background: (theme) => lighten(theme.palette.primary.main, 0.8),
+              }}
+            >
+              <PortraitRoundedIcon color={"primary"} />
+            </Stack>
+            <Typography
+              sx={{ color: grey[700], fontSize: 24 }}
+              variant="h4"
+              color="initial"
+            >
+              General Info
+            </Typography>
           </Stack>
-          <Typography
-            sx={{ color: grey[700], fontSize: 24 }}
-            variant="h4"
-            color="initial"
-          >
-            General Info
-          </Typography>
+          <Stack pt={2} spacing={1}>
+            <TextField
+              size="small"
+              id="outlined-basic"
+              label="Full Name"
+              variant="outlined"
+            />
+            <TextField
+              id="outlined-multiline-flexible"
+              label="Address"
+              multiline
+              rows={4}
+              size={"small"}
+            />
+            <Stack
+              spacing={1}
+              direction={"row"}
+              justifyContent={"space-between"}
+            >
+              <Typography
+                variant="body1"
+                sx={{ width: "50%", color: grey[800] }}
+              >
+                Primary:
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{ width: "50%", color: grey[800] }}
+              >
+                Secondary:
+              </Typography>
+            </Stack>
+            <Stack spacing={1} direction={"row"}>
+              <TextField
+                size="small"
+                id="outlined-basic"
+                label="Contact Person"
+                variant="outlined"
+                fullWidth
+              />
+              <TextField
+                size="small"
+                id="outlined-basic"
+                label="Contact Person"
+                variant="outlined"
+                fullWidth
+              />
+            </Stack>
+            <Stack spacing={1} direction={"row"}>
+              <TextField
+                size="small"
+                id="outlined-basic"
+                label="Title"
+                variant="outlined"
+                fullWidth
+              />
+              <TextField
+                size="small"
+                id="outlined-basic"
+                label="Title"
+                variant="outlined"
+                fullWidth
+              />
+            </Stack>
+            <Stack spacing={1} direction={"row"}>
+              <TextField
+                size="small"
+                id="outlined-basic"
+                label="Email Address"
+                variant="outlined"
+                fullWidth
+              />
+              <TextField
+                size="small"
+                id="outlined-basic"
+                label="Email Address"
+                variant="outlined"
+                fullWidth
+              />
+            </Stack>
+            <Stack spacing={1} direction={"row"}>
+              <TextField
+                size="small"
+                id="outlined-basic"
+                label="Mobile Number"
+                variant="outlined"
+                fullWidth
+              />
+              <TextField
+                size="small"
+                id="outlined-basic"
+                label="Mobile Number"
+                variant="outlined"
+                fullWidth
+              />
+            </Stack>
+          </Stack>
         </Stack>
-        <Stack pt={2} spacing={1}>
-          <TextInputAtom
-            size="small"
-            id="outlined-basic"
-            label="Full Name"
-            variant="outlined"
-          />
-          <TextInputAtom
-            id="outlined-multiline-flexible"
-            label="Address"
-            multiline
-            rows={4}
-            size={"small"}
-          />
-          <Stack spacing={1} direction={"row"} justifyContent={"space-between"}>
-            <Typography variant="body1" sx={{ width: "50%", color: grey[800] }}>
-              Primary:
+        <Stack
+          sx={{
+            width: "50%",
+            background: "white",
+            px: 2,
+            py: 1.5,
+            borderRadius: 1,
+          }}
+        >
+          <Stack spacing={1} direction={"row"} alignItems={"center"}>
+            <Stack
+              sx={{
+                p: 0.4,
+                borderRadius: 0.6,
+                background: (theme) => lighten(theme.palette.primary.main, 0.8),
+              }}
+            >
+              <PortraitRoundedIcon color={"primary"} />
+            </Stack>
+            <Typography
+              sx={{ color: grey[700], fontSize: 24 }}
+              variant="h4"
+              color="initial"
+            >
+              Grant Details
             </Typography>
-            <Typography variant="body1" sx={{ width: "50%", color: grey[800] }}>
-              Secondary:
-            </Typography>
           </Stack>
-          <Stack spacing={1} direction={"row"}>
-            <TextInputAtom
-              size="small"
-              id="outlined-basic"
-              label="Contact Person"
+          <Stack pt={2} spacing={1}>
+            <TextField label="Project Name" variant="outlined" size="small" />
+            <TextField
+              label="Project Brief"
+              multiline
+              rows={4}
               variant="outlined"
-              fullWidth
+              size="small"
             />
-            <TextInputAtom
-              size="small"
-              id="outlined-basic"
-              label="Contact Person"
+            <FormGroup
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <Box sx={{ width: "25%" }}>
+                <label>Project Timeframe: </label>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                  width: "75%",
+                }}
+              >
+                <FormControlLabel control={<Checkbox />} label="6-12 weeks" />
+                <FormControlLabel control={<Checkbox />} label="6-12 months" />
+                <FormControlLabel control={<Checkbox />} label="1-3 years" />
+                <FormControlLabel control={<Checkbox />} label="+4 years" />
+              </Box>
+            </FormGroup>
+            <FormGroup
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <Box sx={{ width: "25%" }}>
+                <label>Frequency: </label>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                  width: "75%",
+                }}
+              >
+                <FormControlLabel control={<Checkbox />} label="One Off" />
+                <FormControlLabel control={<Checkbox />} label="Weekly" />
+                <FormControlLabel control={<Checkbox />} label="Monthly" />
+                <FormControlLabel control={<Checkbox />} label="Quarterly" />
+                <FormControlLabel control={<Checkbox />} label="Semi-Annual" />
+                <FormControlLabel control={<Checkbox />} label="Annual" />
+              </Box>
+            </FormGroup>
+            <TextField label="Classification" variant="outlined" size="small" />
+            <TextField
+              label="Requested Budget"
               variant="outlined"
-              fullWidth
+              size="small"
             />
-          </Stack>
-          <Stack spacing={1} direction={"row"}>
-            <TextInputAtom
-              size="small"
-              id="outlined-basic"
-              label="Title"
+            <TextField
+              label="Total Project Cost"
               variant="outlined"
-              fullWidth
-            />
-            <TextInputAtom
               size="small"
-              id="outlined-basic"
-              label="Title"
-              variant="outlined"
-              fullWidth
-            />
-          </Stack>
-          <Stack spacing={1} direction={"row"}>
-            <TextInputAtom
-              size="small"
-              id="outlined-basic"
-              label="Email Address"
-              variant="outlined"
-              fullWidth
-            />
-            <TextInputAtom
-              size="small"
-              id="outlined-basic"
-              label="Email Address"
-              variant="outlined"
-              fullWidth
-            />
-          </Stack>
-          <Stack spacing={1} direction={"row"}>
-            <TextInputAtom
-              size="small"
-              id="outlined-basic"
-              label="Mobile Number"
-              variant="outlined"
-              fullWidth
-            />
-            <TextInputAtom
-              size="small"
-              id="outlined-basic"
-              label="Mobile Number"
-              variant="outlined"
-              fullWidth
             />
           </Stack>
         </Stack>
       </Stack>
-      <Stack
-        sx={{
-          width: "50%",
-          background: "white",
-          px: 2,
-          py: 1.5,
-          borderRadius: 1,
-        }}
-      >
-        <Stack spacing={1} direction={"row"} alignItems={"center"}>
-          <Stack
-            sx={{
-              p: 0.4,
-              borderRadius: 0.6,
-              background: (theme) => lighten(theme.palette.primary.main, 0.8),
-            }}
-          >
-            <PortraitRoundedIcon color={"primary"} />
-          </Stack>
-          <Typography
-            sx={{ color: grey[700], fontSize: 24 }}
-            variant="h4"
-            color="initial"
-          >
-            Grant Details
-          </Typography>
-        </Stack>
-        <Stack pt={2} spacing={1}>
-          <TextInputAtom label="Project Name" variant="outlined" size="small" />
-          <TextInputAtom
-            label="Project Brief"
-            multiline
-            rows={4}
-            variant="outlined"
-            size="small"
-          />
-          <CheckboxGroupAtom
-            label="Project Timeframe"
-            options={TimeframeOption}
-          />
-          <CheckboxGroupAtom label="Frequency" options={checkboxOptions} />
-
-          <TextInputAtom
-            label="Classification"
-            variant="outlined"
-            size="small"
-          />
-          <TextInputAtom
-            label="Requested Budget"
-            variant="outlined"
-            size="small"
-          />
-          <TextInputAtom
-            label="Total Project Cost"
-            variant="outlined"
-            size="small"
-          />
-          {/********************************************************** */}
-          <CheckboxGroupAtom
-            label="Focus Areas Applicable"
-            options={focusAreaOptions}
-          />
-        </Stack>
-      </Stack>
+      <FocusArea />
     </Stack>
   );
 };
