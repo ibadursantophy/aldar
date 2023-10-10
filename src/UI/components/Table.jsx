@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import AddIcon from "@mui/icons-material/Add";
-import { AutocompleteAtom } from "../../components/AutoComplectAtom/AutoComplectAtom";
+import { AutocompleteAtom } from "./AutoComplectAtom/AutoComplectAtom";
 
 const EditableTable = ({ table, data }) => {
   const [tableData, setTableData] = useState(data);
