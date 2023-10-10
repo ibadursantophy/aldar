@@ -7,13 +7,13 @@ import {
   TableHead,
   TableRow,
   Paper,
-  TextField,
   Stack,
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import AddIcon from "@mui/icons-material/Add";
-import { AutocompleteAtom } from "./AutoComplectAtom/AutoComplectAtom";
-import ButtonAtom from "./ButtonAtom/ButtonAtom";
+import { AutocompleteAtom } from "../atoms/AutoComplectAtom/AutoComplectAtom";
+import { ButtonAtom, TextInputAtom } from "../atoms";
+import { targetOption } from "../../utils/constants/staticData";
 
 const EditableTable = ({ table, data }) => {
   const [tableData, setTableData] = useState(data);
@@ -26,49 +26,7 @@ const EditableTable = ({ table, data }) => {
     };
     setTableData([...tableData, newRow]);
   };
-  const targetOption = [
-    {
-      title: "Of workshops, activation events or engagement spaces delivered",
-      value: "",
-    },
-    {
-      title: "Of programs (6 weeks minimum) delivered",
-      value: "",
-    },
-    {
-      title: "Of Aldar community members engaged",
-      value: "",
-    },
-    {
-      title: "Of success stories published and reported",
-      value: "",
-    },
-    {
-      title: "Of volunteers from Aldar",
-      value: "",
-    },
-    {
-      title: "Of total community volunteers",
-      value: "",
-    },
-    {
-      title: "Of total volunteering Hours",
-      value: "",
-    },
-    {
-      title: "Of PoD engaged in the program",
-      value: "",
-    },
-    {
-      title: "Of individuals working on the project",
-      value: "",
-    },
-    {
-      title: "Of individuals impacted by the project",
-      value: "",
-    },
-  ];
-  
+
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -99,16 +57,20 @@ const EditableTable = ({ table, data }) => {
             <TableRow key={row.id}>
               {row?.edit ? (
                 <TableCell>
-                  <AutocompleteAtom size={'small'} label={'Other Target'} options={targetOption.map((item)=>item.title)} />
+                  <AutocompleteAtom
+                    size={"small"}
+                    label={"Other Target"}
+                    options={targetOption.map((item) => item.title)}
+                  />
                 </TableCell>
               ) : (
                 <TableCell>{row.text}</TableCell>
               )}
               <TableCell>
-                <TextField size={"small"} name="name" />
+                <TextInputAtom size={"small"} name="name" />
               </TableCell>
               <TableCell>
-                <TextField size={"small"} name="age" />
+                <TextInputAtom size={"small"} name="age" />
               </TableCell>
             </TableRow>
           ))}

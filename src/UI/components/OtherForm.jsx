@@ -1,8 +1,11 @@
 import React from "react";
-import { Grid, Paper, Typography, FormControlLabel } from "@mui/material";
-import TextInputAtom from "./TextInputAtom/TextInputAtom";
-import ButtonAtom from "./ButtonAtom/ButtonAtom";
-import CheckBoxAtom from "./CheckBoxAtom/CheckBoxAtom";
+import {
+  Grid,
+  Paper,
+  Typography,
+  FormControlLabel,
+} from "@mui/material";
+import { ButtonAtom, CheckBoxAtom, TextInputAtom } from "../atoms";
 
 const OtherForm = () => {
   return (

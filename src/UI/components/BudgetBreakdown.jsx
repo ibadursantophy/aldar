@@ -11,9 +11,8 @@ import {
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import AddIcon from "@mui/icons-material/Add";
-import TextInputAtom from "./TextInputAtom/TextInputAtom";
-import ButtonAtom from "./ButtonAtom/ButtonAtom";
-
+import { ButtonAtom, TextInputAtom } from "../atoms";
+  
 const BudgetBreakDown = () => {
   const [tableData, setTableData] = useState([
     {
@@ -47,87 +46,88 @@ const BudgetBreakDown = () => {
   };
 
   return (
-    <TableContainer component={Paper}>
-      <Table>
-        <TableHead sx={{ background: grey[500] }}>
-          <TableRow>
-            <TableCell>Item</TableCell>
-            <TableCell>Description / Justification</TableCell>
-            <TableCell>Estimated Price</TableCell>
-            <TableCell>Estimated Qty.</TableCell>
-            <TableCell>Estimated Cost</TableCell>
-            <TableCell>Covered by Partner</TableCell>
-            <TableCell>
-              <Stack
-                direction={"row"}
-                justifyContent={"space-between"}
-                alignItems={"center"}
-              >
-                Covered by Aldar
-                <ButtonAtom
-                  variant="contained"
-                  color="primary"
-                  onClick={addRow}
+    <>
+      <label style={{ marginTop: 40 }}>
+        BUDGET BREAKDOWN
+      </label>
+      <TableContainer component={Paper}>
+        <Table>
+          <TableHead sx={{ background: grey[500] }}>
+            <TableRow>
+              <TableCell>Item</TableCell>
+              <TableCell>Description / Justification</TableCell>
+              <TableCell>Estimated Price</TableCell>
+              <TableCell>Estimated Qty.</TableCell>
+              <TableCell>Estimated Cost</TableCell>
+              <TableCell>Covered by Partner</TableCell>
+              <TableCell>
+                <Stack
+                  direction={"row"}
+                  justifyContent={"space-between"}
+                  alignItems={"center"}
                 >
-                  <AddIcon />
-                </ButtonAtom>
-              </Stack>
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {tableData.map((row, index) => (
-            <TableRow key={index}>
-              <TableCell>
-                <TextInputAtom
-                  size={"small"}
-                  value={row.date}
-                  onChange={(e) =>
-                    handleRowChange(index, "date", e.target.value)
-                  }
-                />
-              </TableCell>
-              <TableCell>
-                <TextInputAtom
-                  size={"small"}
-                  value={row.time}
-                  onChange={(e) =>
-                    handleRowChange(index, "time", e.target.value)
-                  }
-                />
-              </TableCell>
-              <TableCell>
-                <TextInputAtom
-                  size={"small"}
-                  value={row.location}
-                  onChange={(e) =>
-                    handleRowChange(index, "location", e.target.value)
-                  }
-                />
-              </TableCell>
-              <TableCell>
-                <TextInputAtom size={"small"} />
-              </TableCell>
-              <TableCell>
-                <TextInputAtom
-                  size={"small"}
-                  value={row.objectives}
-                  onChange={(e) =>
-                    handleRowChange(index, "objectives", e.target.value)
-                  }
-                />
-              </TableCell>
-              <TableCell>
-                <TextInputAtom size={"small"} />
-              </TableCell>
-              <TableCell>
-                <TextInputAtom size={"small"} />
+                  Covered by Aldar
+                  <ButtonAtom variant="contained" color="primary" onClick={addRow}>
+                    <AddIcon />
+                  </ButtonAtom>
+                </Stack>
               </TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {tableData.map((row, index) => (
+              <TableRow key={index}>
+                <TableCell>
+                  <TextInputAtom
+                    size={"small"}
+                    value={row.date}
+                    onChange={(e) =>
+                      handleRowChange(index, "date", e.target.value)
+                    }
+                  />
+                </TableCell>
+                <TableCell>
+                  <TextInputAtom
+                    size={"small"}
+                    value={row.time}
+                    onChange={(e) =>
+                      handleRowChange(index, "time", e.target.value)
+                    }
+                  />
+                </TableCell>
+                <TableCell>
+                  <TextInputAtom
+                    size={"small"}
+                    value={row.location}
+                    onChange={(e) =>
+                      handleRowChange(index, "location", e.target.value)
+                    }
+                  />
+                </TableCell>
+                <TableCell>
+                  <TextInputAtom size={"small"} />
+                </TableCell>
+                <TableCell>
+                  <TextInputAtom
+                    size={"small"}
+                    value={row.objectives}
+                    onChange={(e) =>
+                      handleRowChange(index, "objectives", e.target.value)
+                    }
+                  />
+                </TableCell>
+                <TableCell>
+                  <TextInputAtom size={"small"} />
+                </TableCell>
+                <TableCell>
+                  <TextInputAtom size={"small"} />
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
   );
 };
 
