@@ -131,3 +131,28 @@ export const targetOption = [
     value: "",
   },
 ];
+
+
+export const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+
+export const grantDetailsDefaultValue = {
+  projectName: "",
+  projectBrief: "",
+  projectTimeFrame: '6-12 weeks', // Provide an initial value, e.g., an empty array
+  frequency: 'One Off', // Provide an initial value, e.g., an empty array
+  classification: "",
+  requestedBudget: null,
+  totalProjectCost: null,
+}
+
+export const generalInfoDefaultValue ={
+  fullName:"",
+  address:"",
+  primaryTitle:"",
+  secondaryTitle:"",
+  primaryEmail:"",
+  secondaryEmail:"",
+  primaryMobile:null,
+  secondaryMobile:null,
+    
+}

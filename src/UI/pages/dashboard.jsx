@@ -1,5 +1,5 @@
-import { GrantDetail } from './../components/GrantDetail';
-import { GeneralInfo } from './../components/GeneralInfo';
+import { GrantDetail, GrantDetailForm } from './../components/GrantDetail';
+import { GeneralInfoForm } from './../components/GeneralInfo';
 import { Stack } from "@mui/material";
 import React from "react";
 import FocusArea from "../components/FocusArea";
@@ -9,8 +9,8 @@ export const Dashboard = () => {
   return (
     <Stack>
       <Stack direction={"row"} spacing={2} px={2} py={4}>
-        <GeneralInfo  />
-        <GrantDetail  />
+        <GeneralInfoForm  />
+        <GrantDetailForm  />
       </Stack>
 
       <FocusArea />
